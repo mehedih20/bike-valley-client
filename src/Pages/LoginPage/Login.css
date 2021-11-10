@@ -1,0 +1,76 @@
+.login-container {
+  background-image: linear-gradient(
+      125deg,
+      rgba(0, 9, 54, 0.9),
+      rgba(0, 0, 0, 0.95)
+    ),
+    url("../../img/reviews-bg.jpeg");
+}
+
+.login {
+  border: 3px solid #053d6b;
+  width: 500px;
+  border-radius: 10px;
+  background: #010d18;
+  margin: 30px 10px 50px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 650px) {
+  .login {
+    width: 400px;
+    padding: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .login {
+    width: 300px;
+  }
+}
+
+.login-title {
+  font-family: "Grechen Fuemen", cursive;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 2px solid #334756;
+  /* border-radius: 20px; */
+  background: transparent;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: grey;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.login-form input:focus {
+  border-bottom: 2px dotted #da1a53;
+  padding: 10px 30px;
+}
+
+@media (max-width: 650px) {
+  .login-form input:focus {
+    padding: 10px 20px;
+  }
+}
+
+.login-check-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 16px;
+  color: #007acc;
+}

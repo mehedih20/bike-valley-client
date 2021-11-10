@@ -1,0 +1,15 @@
+.brands-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 5rem;
+}
+
+.brand-box {
+  text-align: center;
+}
+
+.brand-box p {
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  color: #666666;
+}

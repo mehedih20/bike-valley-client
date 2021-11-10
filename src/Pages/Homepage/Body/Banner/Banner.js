@@ -30,7 +30,7 @@ function Banner() {
         <Container className="banner-text">
           <div className="d-flex flex-column">
             <h1>
-              Welcome to <span className="text-danger">Bike</span> Heaven!
+              Welcome to <span className="text-danger">Bike</span> Valley!
             </h1>
             <h2>
               Don<span className="text-success">'</span>t wait

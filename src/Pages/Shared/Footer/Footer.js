@@ -9,8 +9,10 @@ import {
   IoPhonePortraitOutline,
 } from "react-icons/io5";
 import "./Footer.css";
+import useAuth from "../../../Hooks/useAuth";
 
 const Footer = () => {
+  const { user } = useAuth();
   return (
     <footer className="bike-footer bg-dark">
       <Container>
@@ -40,7 +42,7 @@ const Footer = () => {
               <h3 className="mb-4">Quick Links</h3>
               <div className="quick-links">
                 <Link to="/">Home</Link>
-                <Link to="/login">Login</Link>
+                {!user.displayName && <Link to="/login">Login</Link>}
                 <Link to="/explore">Explore</Link>
               </div>
             </div>
@@ -74,7 +76,7 @@ const Footer = () => {
         </Row>
         <div className="text-center pt-5">
           <small className="text-muted">
-            Copyright&copy; 2021 | All rights reserved | Bike Heaven
+            Copyright&copy; 2021 | All rights reserved | Bike Valley
           </small>
         </div>
       </Container>

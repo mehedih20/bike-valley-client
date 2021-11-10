@@ -1,0 +1,112 @@
+.reviews {
+  background-image: linear-gradient(
+      125deg,
+      rgba(0, 19, 112, 0.8),
+      rgba(0, 0, 0, 0.95)
+    ),
+    url("../../../../img/reviews-bg.jpeg");
+}
+
+.reviews-slider {
+  position: relative;
+  height: 40rem;
+  width: 55rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.review-slide {
+  position: absolute;
+  width: 70%;
+  left: 0;
+  top: 10%;
+  border-radius: 0.5rem;
+  background-color: #d0ddff;
+  opacity: 0;
+  display: flex;
+  margin: 0 15%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 6rem;
+  transition: all 1s ease;
+}
+
+.slide-quotation {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: #da1a53;
+}
+
+.review-slide h2 {
+  text-transform: uppercase;
+  margin: 1.5rem 0 1rem 0;
+  color: #524f4f;
+}
+
+.review-slide p {
+  color: #524f4f;
+  text-align: center;
+  line-height: 1.4;
+  font-style: italic;
+  font-size: 1.7rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.active-slide {
+  transform: translateX(0);
+  opacity: 1;
+}
+.prev-slide {
+  transform: translateX(-100%);
+}
+.next-slide {
+  transform: translateX(100%);
+}
+
+.slide-img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.slide-img img {
+  width: 100%;
+  display: block;
+  transform: scale(1.3);
+}
+
+/* ----------------------------- */
+
+.review-btn {
+  position: absolute;
+  cursor: pointer;
+  outline: none;
+  background: #da1a53;
+  border: none;
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-left {
+  left: 0.5rem;
+  top: 49%;
+}
+.btn-right {
+  right: 0.5rem;
+  top: 49%;
+}

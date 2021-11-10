@@ -4,9 +4,11 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Explore from "./Pages/Explore/Explore";
 import Home from "./Pages/Homepage/Home";
 import Login from "./Pages/LoginPage/Login";
+import MakeOrder from "./Pages/MakeOrder.js/MakeOrder";
 import NotFound from "./Pages/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
+import PrivateRoute from "./Private/PrivateRoute";
 
 function App() {
   return (
@@ -19,9 +21,12 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/dashboard">
+        <PrivateRoute path="/dashboard">
           <Dashboard />
-        </Route>
+        </PrivateRoute>
+        <PrivateRoute path="/makeOrder">
+          <MakeOrder />
+        </PrivateRoute>
         <Route path="/explore">
           <Explore />
         </Route>
