@@ -1,0 +1,68 @@
+.banner {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-carousel {
+  height: 100vh;
+  width: 100%;
+}
+
+.banner-carousel > div {
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-picture {
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-picture img {
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+
+.banner-text-container {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    45deg,
+    rgba(2, 14, 41, 0.9),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.banner-text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.banner-text h1 {
+  font-size: 6.5rem;
+  font-family: var(--font-arch-cursive);
+}
+
+.banner-text h2 {
+  font-size: 4rem;
+  font-family: var(--font-east-cursive);
+  margin-bottom: 5rem;
+}
+
+.banner-text h4 {
+  font-size: 2rem;
+  font-family: var(--font-arch-cursive);
+  margin-bottom: 3rem;
+}
+
+.banner-btn {
+  font-family: var(--font-arch-cursive);
+}

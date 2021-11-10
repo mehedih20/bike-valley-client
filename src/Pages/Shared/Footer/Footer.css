@@ -1,0 +1,99 @@
+.bike-footer {
+  background-image: linear-gradient(rgba(2, 14, 41, 0.95), rgba(0, 0, 0, 0.95)),
+    url("../../../img/footer-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: auto;
+  padding: 1.5rem;
+}
+.bike-address p {
+  margin-bottom: 1.5rem;
+  color: #b6b4b4;
+}
+
+.address-icon {
+  color: #da1a53;
+  font-size: 1.8rem;
+  margin: -0.5rem 0.5rem 0 0;
+}
+
+.quick-links-container {
+  display: flex;
+  justify-content: center;
+}
+
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quick-links > a {
+  color: #b6b4b4;
+  transition: all 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+.quick-links > a:hover {
+  color: #b91646;
+}
+
+@media (max-width: 780px) {
+  .quick-links-container {
+    justify-content: start;
+  }
+  .quick-links {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .quick-links > a {
+    margin-right: 2rem;
+  }
+}
+
+.subscribe-input {
+  background: #383838;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.subscribe-input input {
+  width: 80%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #b6b4b4;
+}
+
+.subscribe-btn {
+  background-color: #b91646;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  font-size: 2rem;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: #7a0428;
+}
+
+.social-btn {
+  margin-right: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  transition: all 0.5s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  color: #fff;
+}
