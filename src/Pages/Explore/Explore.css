@@ -1,0 +1,32 @@
+.explore {
+  background-image: linear-gradient(
+      125deg,
+      rgba(0, 9, 54, 0.75),
+      rgba(0, 0, 0, 0.95)
+    ),
+    url("../../img/reviews-bg.jpeg");
+  padding: 7rem 0;
+}
+
+.explore-box {
+  box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.explore-box-img {
+  padding: 2rem;
+  height: 25rem;
+}
+
+.explore-box-img img {
+  height: 100%;
+}
+
+.explore-box-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #eeeeee;
+}

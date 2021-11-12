@@ -1,16 +1,12 @@
-import { Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router";
 import useAuth from "../Hooks/useAuth";
+import BikeSpinner from "../Pages/Shared/Spinner/BikeSpinner";
 
 function PrivateRoute({ children, ...rest }) {
   let { user, loading } = useAuth();
 
   if (loading) {
-    return (
-      <span className="auth-spinner-container">
-        <Spinner className="auth-spinner" animation="border" variant="danger" />
-      </span>
-    );
+    return <BikeSpinner type="danger" />;
   }
 
   return (

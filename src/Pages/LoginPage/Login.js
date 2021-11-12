@@ -15,6 +15,7 @@ const Login = () => {
     setIsLoading,
     googleSignIn,
     setUser,
+    createDataUser,
   } = useAuth();
   const [isUser, setIsUser] = useState(false);
   const [username, setUsername] = useState("");
@@ -37,6 +38,11 @@ const Login = () => {
             const person = result.user;
             setIsLoading(false);
             if (person.emailVerified) {
+              const dataUser = {
+                name: person.displayName,
+                email: person.email,
+              };
+              createDataUser(dataUser);
               setUser(person);
               history.push(from);
             } else {

@@ -24,7 +24,7 @@ function App() {
         <PrivateRoute path="/dashboard">
           <Dashboard />
         </PrivateRoute>
-        <PrivateRoute path="/makeOrder">
+        <PrivateRoute path="/makeOrder/:bikeId">
           <MakeOrder />
         </PrivateRoute>
         <Route path="/explore">

@@ -1,0 +1,30 @@
+.bike-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 5rem;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.bike-box {
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.bike-img {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  height: 22rem;
+}
+
+.bike-img img {
+  height: 100%;
+}
+
+.bike-box-body {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #eeeeee;
+}

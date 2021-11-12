@@ -10,7 +10,6 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 import initializeAuthentication from "../Firebase/firebase-init";
 
 initializeAuthentication();
@@ -23,10 +22,29 @@ const useFirebase = () => {
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
+  const createDataUser = (newUser) => {
+    fetch("http://localhost:5000/users", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.acknowledged);
+      });
+  };
+
   const googleSignIn = (history, location) => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const person = result.user;
+        const dataUser = {
+          name: person.displayName,
+          email: person.email,
+        };
+        createDataUser(dataUser);
         setUser(person);
         history.push(location);
       })
@@ -90,6 +108,7 @@ const useFirebase = () => {
     loading,
     setLoading,
     handleLogout,
+    createDataUser,
   };
 };
 

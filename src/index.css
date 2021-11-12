@@ -68,13 +68,17 @@ li {
   border-width: 0 0 5px 0;
 }
 
-.auth-spinner-container {
+.common-spinner-container {
   padding: 5rem 0;
   display: block;
   text-align: center;
 }
 
-.auth-spinner {
+.common-spinner {
   height: 4rem;
   width: 4rem;
+}
+
+.font-cursive {
+  font-family: var(--font-arch-cursive);
 }

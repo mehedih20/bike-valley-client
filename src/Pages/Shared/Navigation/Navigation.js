@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./Navigation.css";
 import logo from "../../../img/logo.png";
@@ -11,6 +11,8 @@ const Navigation = () => {
   const linksRef = useRef(null);
   const history = useHistory();
   const { user, handleLogout } = useAuth();
+  const location = useLocation();
+  const path = location?.pathname;
 
   useEffect(() => {
     let linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -23,7 +25,11 @@ const Navigation = () => {
 
   return (
     <header className="header">
-      <div className="container">
+      <div
+        className={`${
+          path === "/dashboard" ? "container-fluid px-5" : "container"
+        }`}
+      >
         <nav className="bike-navbar">
           <div className="bike-nav-logo">
             <div className="d-flex align-items-center">

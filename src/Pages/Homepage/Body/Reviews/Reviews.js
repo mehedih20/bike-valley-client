@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaAngleLeft, FaAngleRight, FaQuoteLeft } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 import "./Reviews.css";
 
@@ -10,36 +11,42 @@ const reviewData = [
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 4,
   },
   {
     name: "Alex",
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 3,
   },
   {
     name: "Alex",
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 2,
   },
   {
     name: "Alex",
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 5,
   },
   {
     name: "Alex",
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 4,
   },
   {
     name: "Alex",
     img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
+    rating: 4,
   },
 ];
 
@@ -70,8 +77,7 @@ const Reviews = () => {
         <h2 className="homepage-title text-light">Reviews</h2>
         <div className="reviews-slider">
           {people.map((person, index) => {
-            const { img, name, description } = person;
-
+            const { img, name, description, rating } = person;
             let position = "next-slide";
             if (index === value) {
               position = "active-slide";
@@ -90,6 +96,11 @@ const Reviews = () => {
                 </span>
                 <div className="slide-img">
                   <img src={img} alt={name} />
+                </div>
+                <div className="d-flex mt-4 mb-2">
+                  {Array.apply(null, Array(rating)).map(function (_, i) {
+                    return <AiFillStar className="text-warning" key={i} />;
+                  })}
                 </div>
                 <h2>{name}</h2>
                 {description?.length > 150 ? (
