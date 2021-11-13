@@ -24,7 +24,7 @@ const Review = () => {
         img: "https://i.ibb.co/CQQNZt5/user-128.png",
         review,
       };
-      fetch("http://localhost:5000/reviews", {
+      fetch("https://desolate-wave-42377.herokuapp.com/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",

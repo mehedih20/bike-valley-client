@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
   const handleModalClose = (data) => {
     if (data) {
-      fetch(`http://localhost:5000/makeAdmin/${email}`, {
+      fetch(`https://desolate-wave-42377.herokuapp.com/makeAdmin/${email}`, {
         method: "PUT",
       })
         .then((res) => res.json())

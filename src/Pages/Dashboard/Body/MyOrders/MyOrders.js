@@ -14,7 +14,7 @@ const MyOrders = () => {
 
   const handleModalClose = (data) => {
     if (data) {
-      fetch(`http://localhost:5000/order/${deleteId}`, {
+      fetch(`https://desolate-wave-42377.herokuapp.com/order/${deleteId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -32,7 +32,7 @@ const MyOrders = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${user.email}`)
+    fetch(`https://desolate-wave-42377.herokuapp.com/order/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -48,15 +48,25 @@ const MyOrders = () => {
       {loading && <BikeSpinner type="danger" />}
       <Container className="px-5">
         {orders.map((item) => {
-          const { _id, img, order, price } = item;
+          const { _id, img, order, price, status } = item;
           return (
             <Row key={_id} className="p-4 border rounded shadow mb-4">
               <Col lg={3} md={3}>
-                <img height="100" src={img} alt={order} />
+                <img height="100" className="mb-3" src={img} alt={order} />
               </Col>
               <Col lg={9} md={9}>
                 <h4 className="font-cursive text-primary">{order}</h4>
                 <p>BDT {price}</p>
+                <p className="fs-5">
+                  Status:{" "}
+                  <span
+                    className={`${
+                      status === "pending" ? "text-danger" : "text-success"
+                    }`}
+                  >
+                    {status}
+                  </span>
+                </p>
                 <Button
                   variant="danger"
                   onClick={() => handleDelete(_id)}

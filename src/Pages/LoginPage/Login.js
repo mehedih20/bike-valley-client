@@ -37,17 +37,13 @@ const Login = () => {
           .then((result) => {
             const person = result.user;
             setIsLoading(false);
-            if (person.emailVerified) {
-              const dataUser = {
-                name: person.displayName,
-                email: person.email,
-              };
-              createDataUser(dataUser);
-              setUser(person);
-              history.push(from);
-            } else {
-              setFormMsg("Please verify your email!");
-            }
+            const dataUser = {
+              name: person.displayName,
+              email: person.email,
+            };
+            createDataUser(dataUser);
+            setUser(person);
+            history.push(from);
           })
           .catch((error) => {
             setFormMsg(error.message);

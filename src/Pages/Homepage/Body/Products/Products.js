@@ -11,7 +11,7 @@ const Products = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:5000/bikes")
+    fetch("https://desolate-wave-42377.herokuapp.com/bikes")
       .then((res) => res.json())
       .then((data) => {
         const shortData = data.slice(0, 6);

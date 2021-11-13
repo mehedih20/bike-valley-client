@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "./Navigation.css";
 import logo from "../../../img/logo.png";
@@ -13,6 +13,11 @@ const Navigation = () => {
   const { user, handleLogout } = useAuth();
   const location = useLocation();
   const path = location?.pathname;
+
+  const handleNavLogout = () => {
+    handleLogout(history);
+    setShowLinks(false);
+  };
 
   useEffect(() => {
     let linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -67,7 +72,7 @@ const Navigation = () => {
               {user.displayName ? (
                 <li className="bike-link-item">
                   <button
-                    onClick={() => handleLogout(history)}
+                    onClick={handleNavLogout}
                     className="btn btn-danger fs-4"
                   >
                     Logout

@@ -9,7 +9,7 @@ const Reviews = () => {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://desolate-wave-42377.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setPeople(data);

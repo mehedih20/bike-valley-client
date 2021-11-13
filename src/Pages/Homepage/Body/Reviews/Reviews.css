@@ -102,9 +102,41 @@
 
 .btn-left {
   left: 0.5rem;
-  top: 49%;
+  top: 40%;
 }
 .btn-right {
   right: 0.5rem;
-  top: 49%;
+  top: 40%;
+}
+
+@media (max-width: 650px) {
+  .reviews-slider {
+    width: 45rem;
+  }
+}
+@media (max-width: 480px) {
+  .reviews-slider {
+    width: 35rem;
+  }
+  .slide-img {
+    height: 7rem;
+    width: 7rem;
+  }
+}
+@media (max-width: 400px) {
+  .reviews-slider {
+    width: 30rem;
+  }
+  .review-slide {
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+  }
+  .review-slide h2 {
+    margin: 1.5rem 0 0.5rem 0;
+  }
+
+  .review-slide p {
+    line-height: 1.3;
+    font-size: 1.6rem;
+  }
 }

@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
-  sendEmailVerification,
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
@@ -23,7 +22,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const createDataUser = (newUser) => {
-    fetch("http://localhost:5000/users", {
+    fetch("https://desolate-wave-42377.herokuapp.com/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -56,10 +55,9 @@ const useFirebase = () => {
       .then((result) => {
         updateProfile(auth.currentUser, {
           displayName: username,
-        }).then(() => {});
-        sendEmailVerification(auth.currentUser).then(() => {
+        }).then(() => {
           setIsLoading(false);
-          setFormMsg("Verification email sent. Check your mail!");
+          setFormMsg("Account created. Please Login!");
         });
       })
       .catch((error) => {
@@ -74,8 +72,8 @@ const useFirebase = () => {
   const handleLogout = (history) => {
     signOut(auth)
       .then(() => {
-        setUser({});
         history.push("/");
+        setUser({});
       })
       .catch((error) => {
         console.log(error.message);

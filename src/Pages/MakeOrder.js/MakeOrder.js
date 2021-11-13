@@ -21,6 +21,7 @@ const MakeOrder = () => {
     setOrderLoading(true);
 
     const finalOrder = {
+      status: "pending",
       name: user.displayName,
       email: user.email,
       order: product.name,
@@ -30,7 +31,7 @@ const MakeOrder = () => {
       number,
     };
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://desolate-wave-42377.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,11 +49,11 @@ const MakeOrder = () => {
 
   const handleModalClose = () => {
     setModalShow(false);
-    history.replace("/dashboard");
+    history.replace("/dashboard/myOrders");
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bikes/${bikeId}`)
+    fetch(`https://desolate-wave-42377.herokuapp.com/bikes/${bikeId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
