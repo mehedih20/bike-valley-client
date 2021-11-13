@@ -2,57 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaAngleLeft, FaAngleRight, FaQuoteLeft } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
-
 import "./Reviews.css";
 
-const reviewData = [
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 4,
-  },
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 3,
-  },
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 2,
-  },
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 5,
-  },
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 4,
-  },
-  {
-    name: "Alex",
-    img: "https://image.freepik.com/free-photo/smart-man-with-phone-his-ear_1262-728.jpg",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ad quibusdam. Blanditiis, exercitationem laudantium consequuntur ipsa saepe aliquam suscipit.",
-    rating: 4,
-  },
-];
-
 const Reviews = () => {
-  const [people, setPeople] = useState(reviewData);
+  const [people, setPeople] = useState([]);
   const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => {
+        setPeople(data);
+      });
+  }, []);
 
   useEffect(() => {
     let lastValue = people.length - 1;
@@ -77,7 +39,7 @@ const Reviews = () => {
         <h2 className="homepage-title text-light">Reviews</h2>
         <div className="reviews-slider">
           {people.map((person, index) => {
-            const { img, name, description, rating } = person;
+            const { img, name, review, rating } = person;
             let position = "next-slide";
             if (index === value) {
               position = "active-slide";
@@ -103,10 +65,10 @@ const Reviews = () => {
                   })}
                 </div>
                 <h2>{name}</h2>
-                {description?.length > 150 ? (
-                  <p>{description.substring(0, 150)}...</p>
+                {review?.length > 150 ? (
+                  <p>{review.substring(0, 150)}...</p>
                 ) : (
-                  <p>{description}</p>
+                  <p>{review}</p>
                 )}
               </div>
             );

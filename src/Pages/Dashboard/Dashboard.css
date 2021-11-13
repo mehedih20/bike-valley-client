@@ -1,0 +1,48 @@
+.dashboard {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dashboard-body {
+  height: calc(100vh - 5rem);
+  display: flex;
+}
+
+.dash-left {
+  background-color: #1f1f1f;
+  width: 20%;
+  transition: all 0.4s ease;
+}
+
+.dash-right {
+  width: 80%;
+  transition: all 0.4s ease;
+  overflow-y: scroll;
+}
+
+.width-0 {
+  width: 0;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.width-100 {
+  width: 100%;
+  transition: all 0.4s ease;
+  overflow-y: scroll;
+}
+
+.dash-link {
+  padding: 2rem;
+}
+
+.dash-link li:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.dash-link li a {
+  color: #d8d8d8;
+}
+
+.dash-link li a:hover {
+  color: #b91646;
+}

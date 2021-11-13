@@ -17,7 +17,9 @@ const Footer = () => {
   const path = location?.pathname;
   return (
     <footer
-      className={`${path === "/dashboard" ? "d-none" : "bike-footer bg-dark"}`}
+      className={`${
+        path.startsWith("/dashboard") ? "d-none" : "bike-footer bg-dark"
+      }`}
     >
       <Container>
         <Row xs={1} sm={1} md={2} lg={3} className="text-light">

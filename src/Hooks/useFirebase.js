@@ -75,7 +75,7 @@ const useFirebase = () => {
     signOut(auth)
       .then(() => {
         setUser({});
-        history.replace("/");
+        history.push("/");
       })
       .catch((error) => {
         console.log(error.message);

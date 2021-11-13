@@ -24,7 +24,9 @@ const Navigation = () => {
   }, [showLinks]);
 
   return (
-    <header className={`${path === "/dashboard" ? "d-none" : "header"}`}>
+    <header
+      className={`${path.startsWith("/dashboard") ? "d-none" : "header"}`}
+    >
       <div className="container">
         <nav className="bike-navbar">
           <div className="bike-nav-logo">
