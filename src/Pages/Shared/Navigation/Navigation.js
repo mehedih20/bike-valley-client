@@ -24,12 +24,8 @@ const Navigation = () => {
   }, [showLinks]);
 
   return (
-    <header className="header">
-      <div
-        className={`${
-          path === "/dashboard" ? "container-fluid px-5" : "container"
-        }`}
-      >
+    <header className={`${path === "/dashboard" ? "d-none" : "header"}`}>
+      <div className="container">
         <nav className="bike-navbar">
           <div className="bike-nav-logo">
             <div className="d-flex align-items-center">

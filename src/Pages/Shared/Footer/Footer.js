@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import {
@@ -13,8 +13,12 @@ import useAuth from "../../../Hooks/useAuth";
 
 const Footer = () => {
   const { user } = useAuth();
+  const location = useLocation();
+  const path = location?.pathname;
   return (
-    <footer className="bike-footer bg-dark">
+    <footer
+      className={`${path === "/dashboard" ? "d-none" : "bike-footer bg-dark"}`}
+    >
       <Container>
         <Row xs={1} sm={1} md={2} lg={3} className="text-light">
           <Col className="p-3 bike-address">
