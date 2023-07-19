@@ -31,7 +31,7 @@ const MakeOrder = () => {
       number,
     };
 
-    fetch("https://desolate-wave-42377.herokuapp.com/order", {
+    fetch("https://bike-valley.onrender.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const MakeOrder = () => {
   };
 
   useEffect(() => {
-    fetch(`https://desolate-wave-42377.herokuapp.com/bikes/${bikeId}`)
+    fetch(`https://bike-valley.onrender.com/bikes/${bikeId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

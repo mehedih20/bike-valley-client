@@ -28,7 +28,7 @@ const AddProduct = () => {
     };
 
     if (data) {
-      fetch("https://desolate-wave-42377.herokuapp.com/bikes", {
+      fetch("https://bike-valley.onrender.com/bikes", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -24,7 +24,7 @@ const Review = () => {
         img: "https://i.ibb.co/CQQNZt5/user-128.png",
         review,
       };
-      fetch("https://desolate-wave-42377.herokuapp.com/reviews", {
+      fetch("https://bike-valley.onrender.com/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",

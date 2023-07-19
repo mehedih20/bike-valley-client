@@ -22,7 +22,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const createDataUser = (newUser) => {
-    fetch("https://desolate-wave-42377.herokuapp.com/users", {
+    fetch("https://bike-valley.onrender.com/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

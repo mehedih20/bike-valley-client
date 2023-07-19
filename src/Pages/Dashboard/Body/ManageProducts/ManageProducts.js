@@ -12,7 +12,7 @@ const ManageProducts = () => {
 
   const handleModalClose = (data) => {
     if (data) {
-      fetch(`https://desolate-wave-42377.herokuapp.com/bikes/${deleteId}`, {
+      fetch(`https://bike-valley.onrender.com/bikes/${deleteId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -30,7 +30,7 @@ const ManageProducts = () => {
   };
 
   useEffect(() => {
-    fetch("https://desolate-wave-42377.herokuapp.com/bikes")
+    fetch("https://bike-valley.onrender.com/bikes")
       .then((res) => res.json())
       .then((data) => {
         setBikes(data);

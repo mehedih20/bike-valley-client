@@ -13,7 +13,7 @@ const ManageOrder = () => {
 
   const handleModalClose = (data) => {
     if (data && !aprroved) {
-      fetch(`https://desolate-wave-42377.herokuapp.com/order/${requiredId}`, {
+      fetch(`https://bike-valley.onrender.com/order/${requiredId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -23,7 +23,7 @@ const ManageOrder = () => {
         });
     }
     if (data && aprroved) {
-      fetch(`https://desolate-wave-42377.herokuapp.com/order/${requiredId}`, {
+      fetch(`https://bike-valley.onrender.com/order/${requiredId}`, {
         method: "PUT",
       })
         .then((res) => res.json())
@@ -48,7 +48,7 @@ const ManageOrder = () => {
   };
 
   useEffect(() => {
-    fetch("https://desolate-wave-42377.herokuapp.com/order")
+    fetch("https://bike-valley.onrender.com/order")
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
