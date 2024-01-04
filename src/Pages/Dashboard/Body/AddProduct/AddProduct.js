@@ -28,7 +28,7 @@ const AddProduct = () => {
     };
 
     if (data) {
-      fetch("https://bike-valley.onrender.com/bikes", {
+      fetch("https://bike-valley-server-three.vercel.app/bikes", {
         method: "POST",
         headers: {
           "content-type": "application/json",

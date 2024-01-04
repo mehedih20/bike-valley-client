@@ -12,7 +12,7 @@ const ManageProducts = () => {
 
   const handleModalClose = (data) => {
     if (data) {
-      fetch(`https://bike-valley.onrender.com/bikes/${deleteId}`, {
+      fetch(`https://bike-valley-server-three.vercel.app/bikes/${deleteId}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -30,7 +30,7 @@ const ManageProducts = () => {
   };
 
   useEffect(() => {
-    fetch("https://bike-valley.onrender.com/bikes")
+    fetch("https://bike-valley-server-three.vercel.app/bikes")
       .then((res) => res.json())
       .then((data) => {
         setBikes(data);

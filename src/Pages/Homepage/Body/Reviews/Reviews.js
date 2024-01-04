@@ -9,7 +9,7 @@ const Reviews = () => {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    fetch("https://bike-valley.onrender.com/reviews")
+    fetch("https://bike-valley-server-three.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setPeople(data);

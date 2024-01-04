@@ -11,7 +11,7 @@ const Explore = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("https://bike-valley.onrender.com/bikes")
+    fetch("https://bike-valley-server-three.vercel.app/bikes")
       .then((res) => res.json())
       .then((data) => {
         setBikes(data);

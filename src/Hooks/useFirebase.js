@@ -22,7 +22,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const createDataUser = (newUser) => {
-    fetch("https://bike-valley.onrender.com/users", {
+    fetch("https://bike-valley-server-three.vercel.app/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

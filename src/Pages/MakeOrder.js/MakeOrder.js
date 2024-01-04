@@ -31,7 +31,7 @@ const MakeOrder = () => {
       number,
     };
 
-    fetch("https://bike-valley.onrender.com/order", {
+    fetch("https://bike-valley-server-three.vercel.app/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const MakeOrder = () => {
   };
 
   useEffect(() => {
-    fetch(`https://bike-valley.onrender.com/bikes/${bikeId}`)
+    fetch(`https://bike-valley-server-three.vercel.app/bikes/${bikeId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

@@ -28,7 +28,7 @@ const Dashboard = () => {
   const [showNav, setShowNav] = useState(true);
   let { path, url } = useRouteMatch();
   const { user, handleLogout } = useAuth();
-  const uri = `https://bike-valley.onrender.com/users/${user.email}`;
+  const uri = `https://bike-valley-server-three.vercel.app/users/${user.email}`;
 
   useEffect(() => {
     fetch(uri)

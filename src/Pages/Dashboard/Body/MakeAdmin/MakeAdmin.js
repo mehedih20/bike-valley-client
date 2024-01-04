@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
   const handleModalClose = (data) => {
     if (data) {
-      fetch(`https://bike-valley.onrender.commakeAdmin/${email}`, {
+      fetch(`https://bike-valley-server-three.vercel.appmakeAdmin/${email}`, {
         method: "PUT",
       })
         .then((res) => res.json())
